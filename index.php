@@ -2,7 +2,7 @@
 
 if ( isset( $_POST['date'] )) {
 
-	$date1 = $_POST['date'];
+	$date1 = date ( "Y-m-d", strtotime($_POST['date']) );
 	$date2 = date("Y-m-d");
 
 	echo $date1, '<br>';
@@ -13,10 +13,10 @@ if ( isset( $_POST['date'] )) {
 	printf("%d days\n", $days);
 } else  {
 ?>
-
+<h3> Please enter date in month, day, year format </h3>
 <form method="POST" >
 <input type="text" name="date" placeholder="Enter a date"/>
-<input type="submit" name="submit">
+<input type="submit" name="submit" value="Submit">
 </form>
 
 <?php } ?>
