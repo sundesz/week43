@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
 	</head>
 	<body>
 
@@ -15,12 +16,12 @@
 		$date1 = date ( "Y-m-d", strtotime($_POST['date']) );
 		$date2 = date("Y-m-d");
 
-		echo "Date you select: " , $date1, '<br>';
+		echo "Date you selected: " , $date1, '<br>';
 
 		$diff = abs(strtotime($date2) - strtotime($date1));
 		$days = floor(($diff )/ (60*60*24));
 
-		printf("%d days\n", $days);
+		printf("No. of days since that date is %d days\n", $days);
 	} else  {
 ?>
 <h3> Please select date </h3>
@@ -34,7 +35,7 @@
 
 	<script>
 		$(function() {
-			$( "#datepicker" ).datepicker();
+			$( "#datepicker" ).datepicker({ maxDate: "-1D" });
 			
 			$("#submit").click(function() {
 				if ( $("#datepicker").val() == '') {
