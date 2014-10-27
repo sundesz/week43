@@ -8,7 +8,7 @@
 		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
 	</head>
-	<body>
+	<body style="text-align:center">
 
 <?php
 	if ( isset( $_POST['date'] )) {
@@ -16,7 +16,7 @@
 		$date1 = date ( "Y-m-d", strtotime($_POST['date']) );
 		$date2 = date("Y-m-d");
 
-		echo "Date you selected: " , $date1, '<br>';
+		echo "Date you select: " , $date1, '<br>';
 
 		$diff = abs(strtotime($date2) - strtotime($date1));
 		$days = floor(($diff )/ (60*60*24));
@@ -35,7 +35,7 @@
 
 	<script>
 		$(function() {
-			$( "#datepicker" ).datepicker({ maxDate: "-1D" });
+			$( "#datepicker" ).datepicker({ maxDate: "-2D" });
 			
 			$("#submit").click(function() {
 				if ( $("#datepicker").val() == '') {
